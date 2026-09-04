@@ -34,3 +34,7 @@ android/.gradle/
 android/captures/
 android/gradleBuild/
 android/local.properties
+
+# Secrets and local databases
+bot_sozlamalar.json
+*.db
