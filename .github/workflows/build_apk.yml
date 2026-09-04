@@ -29,10 +29,11 @@ jobs:
         run: flutter pub get
 
       - name: Release APK yig'ish
-        run: flutter build apk --release
+        run: flutter build apk --release --no-tree-shake-icons
 
       - name: Tayyor APK faylni yuklab olishga chiqarish (Artifact)
         uses: actions/upload-artifact@v4
+        if: success()
         with:
           name: AudioScribe-AI-Release-APK
           path: build/app/outputs/flutter-apk/app-release.apk

@@ -10,40 +10,23 @@ echo     AudioScribe AI - GitHub'ga Yuklash
 echo ===================================================
 echo.
 
-echo [1/5] Foydalanuvchi ma'lumotlari sozlanmoqda...
+echo [1/4] Foydalanuvchi ma'lumotlari sozlanmoqda...
 git config user.name "OmatilloQayumjonov"
 git config user.email "omatillo@users.noreply.github.com"
 
-echo [2/5] Git sozlanmoqda...
-git init
-git branch -M main
-
-echo [3/5] Fayllar tanlanmoqda...
+echo [2/4] O'zgarishlar tanlanmoqda...
 git add .
 
-echo [4/5] Saqlanmoqda (commit)...
-git commit -m "AudioScribe AI Release APK Action"
+echo [3/4] Saqlanmoqda (commit)...
+git commit -m "Fix Android build configs and Gradle plugins"
 
-echo [5/5] GitHub manziliga yuklanmoqda (Push)...
-git remote remove origin >nul 2>&1
-git remote add origin https://github.com/OmatilloQayumjonov/audioscribe.git
-git push -u origin main --force
-
-if %errorlevel% neq 0 (
-    echo.
-    echo ===================================================
-    echo [XATO] Yuklashda xatolik bo'ldi.
-    echo ===================================================
-    pause
-    exit /b
-)
+echo [4/4] GitHub manziliga yuklanmoqda (Push)...
+git push origin main --force
 
 echo.
 echo ===================================================
-echo [TABRIKLAYMIZ!] Fayllar muvaffaqiyatli yuklandi!
-echo.
-echo Endi sahifani yangilang (F5):
-echo https://github.com/OmatilloQayumjonov/audioscribe/actions
+echo [TABRIKLAYMIZ!] Yangilangan kodlar GitHub'ga yuborildi!
+echo Endi Actions sahifasini yangilang (F5).
 echo ===================================================
 echo.
 pause
