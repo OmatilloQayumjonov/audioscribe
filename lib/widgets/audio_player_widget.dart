@@ -82,11 +82,11 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.parseBorder(Border.all(
+        border: Border.all(
           color: theme.brightness == Brightness.dark
               ? Colors.white.withOpacity(0.08)
               : Colors.black.withOpacity(0.06),
-        )),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _initShareIntent() {
     // Telegram / WhatsApp orqali ilovaga ulashilgan audio fayllarni qabul qilish
-    _intentSub = ReceiveSharingIntent.instance.getMediaStream().listen(
+    _intentSub = ReceiveSharingIntent.getMediaStream().listen(
       (List<SharedMediaFile> value) {
         if (value.isNotEmpty && mounted) {
           final audioFile = value.first;
@@ -51,11 +51,11 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
 
-    ReceiveSharingIntent.instance.getInitialMedia().then((List<SharedMediaFile> value) {
+    ReceiveSharingIntent.getInitialMedia().then((List<SharedMediaFile> value) {
       if (value.isNotEmpty && mounted) {
         final audioFile = value.first;
         _processAudio(audioFile.path, 0, fileName: 'Telegram/WhatsApp ovozi');
-        ReceiveSharingIntent.instance.reset();
+        ReceiveSharingIntent.reset();
       }
     });
   }

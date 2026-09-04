@@ -18,14 +18,14 @@ echo [2/4] O'zgarishlar tanlanmoqda...
 git add .
 
 echo [3/4] Saqlanmoqda (commit)...
-git commit -m "Fix Android build configs and Gradle plugins"
+git commit -m "Fix Dart compile errors in AudioPlayer and ReceiveSharingIntent"
 
 echo [4/4] GitHub manziliga yuklanmoqda (Push)...
 git push origin main --force
 
 echo.
 echo ===================================================
-echo [TABRIKLAYMIZ!] Yangilangan kodlar GitHub'ga yuborildi!
+echo [TABRIKLAYMIZ!] Tuzatishlar GitHub'ga yuborildi!
 echo Endi Actions sahifasini yangilang (F5).
 echo ===================================================
 echo.
