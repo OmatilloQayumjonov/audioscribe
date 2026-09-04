@@ -1,0 +1,38 @@
+name: Android APK Build
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kodni yuklab olish
+        uses: actions/checkout@v4
+
+      - name: Java (JDK 17) o'rnatish
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Flutter SDK o'rnatish
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Paketlarni yuklash
+        run: flutter pub get
+
+      - name: Release APK yig'ish
+        run: flutter build apk --release
+
+      - name: Tayyor APK faylni yuklab olishga chiqarish (Artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: AudioScribe-AI-Release-APK
+          path: build/app/outputs/flutter-apk/app-release.apk
